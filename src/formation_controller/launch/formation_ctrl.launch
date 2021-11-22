@@ -1,0 +1,14 @@
+<launch>  
+ 
+    <!-- launch the node -->
+    <node name="formation_controller" pkg="formation_controller" type="formation_controller" output="screen">
+      <!-- load config from config file -->
+      <rosparam file="$(find formation_controller)/config/params.yaml" />
+      
+    </node>
+
+    <node name="collision_avoidance" pkg="formation_controller" type="collision_avoidance" output="screen">
+      <rosparam file="$(find formation_controller)/config/params.yaml" />
+    </node>
+
+</launch>

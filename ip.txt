@@ -1,0 +1,22 @@
+IP ADDRESS:
+
+Sphinx:
+10.202.0.1
+10.202.1.1
+10.202.2.1
+
+----------------------------------------
+to change real drone IP (Parrot Bebop2):
+
+ turn on the drone by pressing the key
+ connect via USB
+ click power button 4 times
+ adb connect 192.168.43.1:9050
+ adb shell mount -o remount,rw /
+ adb shell
+ cd sbin
+ vi broadcom_setup.sh
+ change IFACE_IP_AP to new ip:  192.168.x.1
+ save and exit
+ exit
+-----------------------------------------

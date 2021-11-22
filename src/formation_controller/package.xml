@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>formation_controller</name>
+  <version>1.0.0</version>
+  <description>The formation_controller package</description>
+
+  <maintainer email="b.kulecki@gmail.com">Bartlomiej Kulecki</maintainer>
+  <author email="b.kulecki@gmail.com">Bartlomiej Kulecki</author>
+
+  <license>BSD</license>
+
+
+
+  <build_depend>message_generation</build_depend>
+
+  <exec_depend>message_runtime</exec_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>position_controller</build_depend>
+  <build_export_depend>nav_msgs</build_export_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+
+  <export>
+  </export>
+</package>
