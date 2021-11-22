@@ -6,8 +6,8 @@ This repository contains software for position control of **Parrot Bebop 2 drone
 Position of each drone is controlled by a PID controller, which was tuned manually first and then fine-tuned with the iterative autotuning method based on golden-section search. Images below show the formation of 3 drones in Gazebo simulator. The UAV formation follow the trajectory around the observed object (in this example - chair). Each drone is focused on the object during the whole flight.
 
 <p float="left">
-<img src=".\images\gazebo1.png" alt="Sim1" height="200" />
-<img src=".\images\gazebo2.png" alt="Sim2" height="200" />
+<img src=".\images\gazebo1.png" alt="Sim1" height="240" />
+<img src=".\images\gazebo2.png" alt="Sim2" height="240" />
 </p>
 
 There is also a simple collision avoidance system which prevents drones from colliding. It is based on setting safety zones around each UAV.
@@ -15,8 +15,8 @@ There is also a simple collision avoidance system which prevents drones from col
 We also tested the system in real conditions. For this purpose we used a motion capture system (Optitrack) to obtain actual position of each drone. Example of one drone and two drones flights:
 
 <p float="left">
-<img src=".\images\lab1.png" alt="Lab1" height="200" />
-<img src=".\images\lab2.png" alt="Lab2" height="200" />
+<img src=".\images\lab1.png" alt="Lab1" height="240" />
+<img src=".\images\lab2.png" alt="Lab2" height="240" />
 </p>
 
 Video on YouTube: https://youtu.be/OJhgMnpAi4s
