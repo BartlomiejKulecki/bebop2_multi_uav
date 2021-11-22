@@ -35,7 +35,7 @@ Then install **bebop_autonomy** - [installation procedure.](https://bebop-autono
 
 Download the repository:
 ```
-git clone ...
+git clone https://github.com/BartlomiejKulecki/bebop2_multi_uav.git
 ```
 
 Copy the src/formation_controller and src/position_controller folders to ~/bebop_ws/src directory:
