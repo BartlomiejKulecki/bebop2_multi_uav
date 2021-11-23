@@ -1,16 +1,16 @@
 # Bebop 2 multi UAV
 
-This repository contains software for position control of **Parrot Bebop 2 drone**. The system enables to control real drone or simulated in **Parrot Sphinx** with the use of **bebop_autonomy** driver. Also, the following software enables to run 2 or 3 drones and control them as a formation, where one of them is a leader and the rest are followers. The solution is based on **Robot Operating System**.
+This repository contains software for position control of **Parrot Bebop 2 drone**. The system enables to control the real drone or simulated in **Parrot Sphinx** with the use of **bebop_autonomy** driver. Also, the following software enables to run 2 or 3 drones and control them as a formation, where one of them is a leader and the rest are followers. The solution is based on **Robot Operating System**.
 
 ## Results in simulation and real tests
-Position of each drone is controlled by a PID controller, which was tuned manually first and then fine-tuned with the iterative autotuning method based on golden-section search. Images below show the formation of 3 drones in Gazebo simulator. The UAV formation follow the trajectory around the observed object (in this example - chair). Each drone is focused on the object during the whole flight.
+The position of each drone is controlled by a PID controller, which was tuned manually first and then fine-tuned with the iterative autotuning method based on golden-section search. Images below show the formation of 3 drones in the Gazebo simulator. The UAV formation follows the trajectory around the observed object (in this example - the chair). Each drone is focused on the object during the whole flight.
 
 <p float="left">
 <img src=".\images\gazebo1.png" alt="Sim1" height="240" />
 <img src=".\images\gazebo2.png" alt="Sim2" height="240" />
 </p>
 
-There is also a simple collision avoidance system which prevents drones from colliding. It is based on setting safety zones around each UAV.
+There is also a simple collision avoidance system that prevents drones from colliding. It is based on setting safety zones around each UAV.
 
 We also tested the system in real conditions. For this purpose we used a motion capture system (Optitrack) to obtain actual position of each drone. Example of one drone and two drones flights:
 
@@ -25,7 +25,7 @@ ___
 ## System requirements
 - Ubuntu 16.04
 - ROS Kinetic
-> It was not tested with newer sofware yet.
+> It was not tested with newer software yet.
 
 
 ## Installation
@@ -53,7 +53,7 @@ cd ~/bebop_ws
 catkin_make
 ```
 
-Simulation of multiple UAVs does not work with the newest bebop2 firmware, so [download](http://plf.parrot.com/sphinx/firmwares/ardrone3/milos_pc/4.4.2/images/ardrone3-milos_pc.ext2.zip) version 4.4.2 and save it in directory:  */home/username/firmware*
+Simulation of multiple UAVs does not work with the newest bebop2 firmware, so [download](http://plf.parrot.com/sphinx/firmwares/ardrone3/milos_pc/4.4.2/images/ardrone3-milos_pc.ext2.zip) version 4.4.2 and save it in a directory:  */home/username/firmware*
 
 Copy files:
 ```
@@ -71,7 +71,7 @@ Before starting the simulation, you should go to the folder
 `~/bebop_ws/src/position_controller/src` and `~/bebop_ws/src/formation_controller/src`, copy the appropriate file / files from the directories there (depending on the number of drones, more information in the readme files located there).\
 You can also change some params in file: `~/bebop_ws/src/formation_controller/config/params.yaml `
 
-> To run the N drone simulation, you must have N network interfaces, e.g. for three drones you can use a built-in WiFi card, an additional USB WiFi dongle and an Ethernet port.
+> To run the N drone simulation, you must have N network interfaces, e.g. for three drones you can use a built-in WiFi card, an additional USB WiFi dongle, and an Ethernet port.
 
 Next, compile the code:
 ```
@@ -116,17 +116,17 @@ roslaunch bebop_driver  bebop_node.launch
 roslaunch bebop_driver  bebop_node_f1.launch
 roslaunch bebop_driver  bebop_node_f2.launch
 ```
-position controller (in new terminal):
+position controller (in a new terminal):
 ```
 source ~/bebop_ws/devel/setup.bash
 rosrun  position_controller  position_controller
 ```
-and formation controller (in new terminal):
+and formation controller (in a new terminal):
 ```
 source ~/bebop_ws/devel/setup.bash
 roslaunch  formation_controller  formation_ctrl.launch
 ```
-You can use keyboard to send commands: takeoff, land, emergency stop, start trajectory (instructions will show in terminal).
+You can use a keyboard to send commands: takeoff, land, emergency stop, start trajectory (instructions will show in terminal).
 
 ## Running real drones
 >**WARNING!**\
@@ -135,25 +135,25 @@ You can use keyboard to send commands: takeoff, land, emergency stop, start traj
 Before starting, you should go to the folder `~/bebop_ws/src/position_controller/src` and `~/bebop_ws/src/formation_controller/src`, copy the appropriate file / files from the directories there (depending on the number of drones, more information in the readme files located there). \
 You can also change some params in file: `~/bebop_ws/src/formation_controller/config/params.yaml`
 
->If you want to run few drones at the same time you have to connect to each by WiFi (multiple WiFi interfaces are needed). Each drone needs different IP (you should set it).
+>If you want to run a few drones at the same time you have to connect to each by WiFi (multiple WiFi interfaces are needed). Each drone needs different IP (you should set it).
 
 In bebop_node.launch files, the bebop_ip field should be assigned the ip_real variable (it should match to IP set on the drone).
 
-Connect to drones WiFi and run driver for each drone (in new terminal):
+Connect to drones WiFi and run driver for each drone (in a new terminal):
 ```
 source ~/bebop_ws/devel/setup.bash
 roslaunch bebop_driver  bebop_node.launch
 roslaunch bebop_driver  bebop_node_f1.launch
 roslaunch bebop_driver  bebop_node_f2.launch
 ```
-position controller (in new terminal):
+position controller (in a new terminal):
 ```
 source ~/bebop_ws/devel/setup.bash
 rosrun  position_controller  position_controller
 ```
-and formation controller (in new terminal):
+and formation controller (in a new terminal):
 ```
 source ~/bebop_ws/devel/setup.bash
 roslaunch  formation_controller  formation_ctrl.launch
 ```
-You can use keyboard to send commands: takeoff, land, emergency stop, start trajectory (instructions will show in terminal).
+You can use a keyboard to send commands: takeoff, land, emergency stop, start trajectory (instructions will show in terminal).
