@@ -60,7 +60,7 @@ Copy files:
 cd bebop2_multi_uav/files
 cp drones/*.drone  /opt/parrot-sphinx/usr/share/sphinx/drones
 cp models/*  /opt/parrot-sphinx/usr/share/sphinx/models
-cp worlds/*.worlds  /opt/parrot-sphinx/usr/share/sphinx/worlds
+cp worlds/*.world  /opt/parrot-sphinx/usr/share/sphinx/worlds
 cp launch/*.launch  ~/bebop_ws/bebop_autonomy/bebop_driver/launch
 ```
 In copied drone files correct firmware path (your username).
