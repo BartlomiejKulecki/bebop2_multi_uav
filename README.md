@@ -53,7 +53,7 @@ cd ~/bebop_ws
 catkin_make
 ```
 
-Simulation of multiple UAVs does not work with the newest bebop2 firmware, so [download](http://plf.parrot.com/sphinx/firmwares/ardrone3/milos_pc/4.4.2/images/ardrone3-milos_pc.ext2.zip) version 4.4.2 and save it in a directory:  */home/username/firmware*
+Simulation of multiple UAVs does not work with the newest bebop2 firmware, so download version 4.4.2 ([official link](http://plf.parrot.com/sphinx/firmwares/ardrone3/milos_pc/4.4.2/images/ardrone3-milos_pc.ext2.zip) is no longer valid so download it from [here](https://drive.google.com/file/d/1fXRGIUoYaZnumstbjwI7YAwtl1u5j8nT/view?usp=sharing)) and save it in a directory:  */home/username/firmware*
 
 Copy files:
 ```
